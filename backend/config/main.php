@@ -10,8 +10,15 @@ return [
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
+    'defaultRoute' => 'blog',
     'bootstrap' => ['log'],
-    'modules' => [],
+    'modules' => [
+        'blog' => [
+            'class' => 'akiraz2\blog\Module',
+            'controllerNamespace' => 'akiraz2\blog\controllers\backend',
+            //'adminAccessControl' => 'common\components\AdminAccessControl', // null - by default 
+        ],
+    ],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',

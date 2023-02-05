@@ -11,6 +11,26 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
+    'defaultRoute' => 'blog', //set blog as default route
+    'modules' => [
+        'blog' => [
+            'class' => 'akiraz2\blog\Module',
+            'controllerNamespace' => 'akiraz2\blog\controllers\frontend',
+            'blogPostPageCount' => 6,
+            'blogCommentPageCount' => 10, //20 by default
+            'enableComments' => true, //false by default
+            'schemaOrg' => [ // empty array [] by default! 
+                'publisher' => [
+                    'logo' => '/img/logo.png',
+                    'logoWidth' => 191,
+                    'logoHeight' => 74,
+                    'name' => 'My Company',
+                    'phone' => '+1 800 488 80 85',
+                    'address' => 'City, street, house'
+                ]
+            ]
+        ],
+    ],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
